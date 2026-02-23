@@ -13,7 +13,6 @@ public class PlayerService
             _repository = repository;
     }
 
-
     public async Task<List<Player>> GetAllPlayersAsync()
     {
         return await _repository.GetAllPlayersAsync();
@@ -46,7 +45,9 @@ public class PlayerService
 
         bool playerExists = await _repository.PlayerExistByName(player.Name);
         if (playerExists)
-             throw new InvalidOperationException($"Player with name {player.Name} already exists.");
+        {
+            throw new InvalidOperationException($"Player with name {player.Name} already exists.");
+        }
 
         await _repository.AddPlayerAsync(player);
         return player;
