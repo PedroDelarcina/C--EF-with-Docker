@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
         }
         public DbSet<Player> Players { get; set; }
         public DbSet<Clan> Clans { get; set; }
+        public DbSet<Weapons> Weapons { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

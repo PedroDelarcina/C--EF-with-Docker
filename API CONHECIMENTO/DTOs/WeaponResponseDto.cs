@@ -7,6 +7,6 @@
         public int Damage { get; set; }
         public string TypeName { get; set; }
         public string PlayerName { get; set; }
-        public int PlayerId { get; set; }
+        public int? PlayerId { get; set; }
     }
 
