@@ -21,7 +21,12 @@ public class PlayerRepository
     {
         return await _context.Players.FirstOrDefaultAsync(x => x.Id == id);
     }
-    
+
+    public async Task<List<Player>> GetPlayersByClanIdAsync(int clanId)
+    {
+        return await _context.Players.Where(x => x.ClanId == clanId).ToListAsync();
+    }
+
     public async Task<bool> PlayerExistByName(string name)
     {
         return await _context.Players.AnyAsync(x => x.Name == name);

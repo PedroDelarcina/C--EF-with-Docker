@@ -30,6 +30,17 @@ public class PlayerService
         return player;
     }
 
+    public async Task<List<Player>> GetPlayersByClanIdAsync(int clanId) 
+    {
+        var players = await _repository.GetPlayersByClanIdAsync(clanId);
+        if (players == null || players.Count == 0)
+        {
+            throw new KeyNotFoundException($"No players found for Clan ID {clanId}.");
+        }
+        return players;
+    }
+
+
     public async Task<Player> AddPlayerAsync(Player player)
     {
 

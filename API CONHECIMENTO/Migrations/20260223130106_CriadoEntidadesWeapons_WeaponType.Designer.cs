@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_CONHECIMENTO.Migrations
 {
     [DbContext(typeof(InfestationNewzDbContext))]
-    partial class InfestationNewzDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260223130106_CriadoEntidadesWeapons_WeaponType")]
+    partial class CriadoEntidadesWeapons_WeaponType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
